@@ -1,0 +1,33 @@
+/* The real, accessible value reserves the finished width for the entire count-up. */
+.guide-facts dd { position: relative; }
+.guide-facts .fact-final { opacity: 0; }
+.guide-facts .fact-tick { position: absolute; inset: 0; text-align: center; user-select: none; }
+
+/* A single clipped, click-through layer. Only its small gradient moves; no page-sized repaint or particle loop. */
+.home-pointer-light { display: none; }
+@media (any-hover: hover) and (any-pointer: fine) and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+  .home-pointer-light {
+    --halo-size: 310px;
+    --halo-core: rgb(70 136 222 / .18);
+    --halo-ring: rgb(121 135 213 / .10);
+    position: fixed; inset: 0; z-index: 18; display: block; overflow: clip;
+    contain: strict; pointer-events: none; user-select: none;
+    opacity: 0; transition: opacity 160ms ease-out;
+  }
+  html[data-theme=dark] .home-pointer-light {
+    --halo-core: rgb(128 220 255 / .23);
+    --halo-ring: rgb(123 154 244 / .14);
+  }
+  .home-pointer-light[data-lit] { opacity: .8; }
+  .home-pointer-light[data-lit][data-surface] { opacity: 1; }
+  .home-pointer-light > i {
+    position: absolute; top: 0; left: 0; width: var(--halo-size); height: var(--halo-size);
+    margin: calc(var(--halo-size) / -2); pointer-events: none;
+    background: radial-gradient(ellipse closest-side, var(--halo-core) 0%, var(--halo-ring) 38%, transparent 100%);
+    will-change: transform;
+  }
+}
+@media (prefers-reduced-motion: reduce), (forced-colors: active), print {
+  .guide-facts .fact-final { opacity: 1; }
+  .guide-facts .fact-tick, .home-pointer-light { display: none; }
+}

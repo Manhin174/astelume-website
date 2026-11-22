@@ -3,6 +3,8 @@ import { mountQuoteWall } from './home-quote-view.js';
 import { homeMarketSource } from './home-market-source.js';
 import { mountServiceStatus } from './home-status.js';
 import { mountProtocols } from './home-protocols.js';
+import { mountHomeEffects } from './home-effects.js';
+import './home-effects.css';
 
 const $ = selector => document.querySelector(selector);
 const setText = (selector, value) => { $(selector).textContent = value; };
@@ -48,6 +50,7 @@ applyMotion();
 systemTheme.addEventListener('change', applyTheme);
 reduceMotion.addEventListener('change', applyMotion);
 mountProtocols($('#protocols'));
+mountHomeEffects($('#home'), reduceMotion);
 
 for (const button of themeChoices) {
   button.addEventListener('click', () => {
