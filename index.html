@@ -103,8 +103,8 @@
       <article class="cap-card cap-wide"><p class="cap-num">04 / BASE URL</p><h3>配置连接</h3><p>兼容 OpenAI 的客户端可使用下方 Base URL；其他协议请按文档填写。</p><div class="feature-connect"><div><code id="api-base-url">https://astelume.cc.cd/v1</code></div><button class="copy-control" id="copy-api-address" type="button"><svg class="glyph" aria-hidden="true"><use href="#icon-copy" /></svg><span class="copy-label">复制 API 地址</span></button><span id="copy-api-status" class="copy-feedback" role="status"></span></div></article></div>
     </section>
     <section id="models" class="catalog-section guide-section" aria-labelledby="models-title"><div class="home-wrap">
-      <div class="section-intro"><div><p class="guide-eyebrow">02 <i></i> / MODEL DIRECTORY</p><h2 id="models-title">广场品牌与型号</h2><p>按模型广场的品牌标签，列出访客当前可以看到的全部型号。</p></div><p class="directory-counts" aria-label="当前广场统计"><strong id="fact-brands">—</strong> 个品牌分类 <span aria-hidden="true">/</span> <strong id="fact-models">—</strong> 个型号</p></div>
-      <ul id="brand-grid" class="directory-grid" aria-label="按广场品牌标签分组的完整型号目录" aria-busy="true"></ul><p id="brand-status" class="brand-status" role="status">正在读取模型广场目录。</p><p class="model-disclaimer">没有品牌标签的型号单独列出，不计入品牌数。收录表示广场可见，不代表每种协议或账户都可调用。</p>
+      <div class="section-intro"><div><p class="guide-eyebrow">02 <i></i> / BRANDS</p><h2 id="models-title">模型原厂品牌</h2><p>这里展示模型广场中的原厂品牌及部分公开分组。</p></div><p class="directory-counts"><strong id="fact-brands">—</strong> 个品牌</p></div>
+      <ul id="brand-grid" class="directory-grid" aria-label="原厂品牌与公开分组示例" aria-busy="true"></ul><p id="brand-status" class="brand-status" role="status">正在读取品牌信息。</p>
     </div></section>
     <section class="home-wrap guide-section guide-start" id="quickstart" aria-labelledby="start-title"><div class="section-intro"><div><p class="guide-eyebrow">03 <i></i> / QUICKSTART</p><h2 id="start-title">三步开始调用</h2></div><a class="home-text-link" href="/docs/quickstart/">查看接入文档 <span aria-hidden="true">↗</span></a></div>
       <ol class="start-steps"><li><span>01</span><div><h3>选择模型</h3><p>在广场确认型号、协议和当前费用。</p><a href="https://astelume.cc.cd/pricing">浏览模型广场 →</a></div></li><li><span>02</span><div><h3>连接客户端</h3><p>创建密钥，将对应地址填入客户端。</p><a href="/docs/clients/">查看配置指南 →</a></div></li><li><span>03</span><div><h3>发送第一条请求</h3><p>从简单的文本对话开始，再核对用量记录。</p><a href="/docs/first-request/">查看请求示例 →</a></div></li></ol>
@@ -121,7 +121,7 @@
     </div>
   </footer>
   <dialog id="document-dialog" aria-labelledby="document-title"><div class="home-dialog-head"><h2 id="document-title"></h2><form method="dialog"><button id="close-dialog" class="header-icon" type="submit" aria-label="关闭对话框" autofocus><svg class="glyph" aria-hidden="true"><use href="#icon-close" /></svg></button></form></div><div id="document-body"></div></dialog>
-  <noscript><p class="home-noscript">启用 JavaScript 可载入品牌矩阵、复制地址和查看状态；控制台与使用文档链接仍可使用。</p></noscript>
+  <noscript><p class="home-noscript">启用 JavaScript 可查看原厂品牌、复制地址和查看状态；控制台与使用文档链接仍可使用。</p></noscript>
 </div>
 <script type="module" src="/src/main.js"></script>
 </body>
