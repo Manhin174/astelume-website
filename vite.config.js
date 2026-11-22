@@ -1,0 +1,4 @@
+import {defineConfig} from 'vite';
+// Only the homepage is published here. The official model plaza, Docs and Console are independently served.
+function siteLinks(server){server.middlewares.use((req,res,next)=>{const url=new URL(req.url,'http://localhost');if(url.pathname==='/docs'||url.pathname.startsWith('/docs/')){res.writeHead(302,{Location:'https://astelume.cc.cd'+url.pathname+url.search});return res.end();}if(url.pathname==='/astelume/live-group-quotes'){res.writeHead(503,{'Content-Type':'application/json','Cache-Control':'no-store','Retry-After':'300'});return res.end('{"unavailable":true}');}return next();});}
+export default defineConfig({plugins:[{name:'development-site-links',configureServer:siteLinks,configurePreviewServer:siteLinks}],build:{assetsDir:'astelume/assets',sourcemap:false}});

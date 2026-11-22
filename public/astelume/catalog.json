@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 4,
+  "brands": [
+    {
+      "brand_id": "gpt",
+      "display_name": "GPT",
+      "manufacturer": "OpenAI",
+      "logo": {
+        "kind": "official-mark",
+        "id": "gpt"
+      },
+      "has_listed_service": true
+    },
+    {
+      "brand_id": "claude",
+      "display_name": "Claude",
+      "manufacturer": "Anthropic",
+      "logo": {
+        "kind": "official-mark",
+        "id": "claude"
+      },
+      "has_listed_service": true
+    },
+    {
+      "brand_id": "gemini",
+      "display_name": "Gemini",
+      "manufacturer": "Google",
+      "logo": {
+        "kind": "official-mark",
+        "id": "gemini"
+      },
+      "has_listed_service": true
+    },
+    {
+      "brand_id": "grok",
+      "display_name": "Grok",
+      "manufacturer": "xAI",
+      "logo": {
+        "kind": "official-mark",
+        "id": "grok"
+      },
+      "has_listed_service": true
+    },
+    {
+      "brand_id": "deepseek",
+      "display_name": "DeepSeek",
+      "manufacturer": "DeepSeek",
+      "logo": {
+        "kind": "official-mark",
+        "id": "deepseek"
+      },
+      "has_listed_service": true
+    }
+  ]
+}

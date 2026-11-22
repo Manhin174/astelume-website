@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#F3F7FC" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Astelume 统一模型 API。探索模型原厂品牌，三步配置 API 连接，在控制台管理密钥、用量与费用。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Astelume · 从这里，连接你的下一次灵感。" />
+  <meta property="og:description" content="从这里，连接你的下一次灵感。查看模型广场的公开分组报价，接入你熟悉的客户端。" />
+  <meta property="og:image" content="/astelume/og-card.svg" />
+  <link rel="icon" type="image/svg+xml" href="/astelume/favicon.svg" />
+  <link rel="stylesheet" href="/src/homepage.css" />
+  <link rel="stylesheet" href="/src/home-refresh.css" />
+  <link rel="stylesheet" href="/src/home-atlas.css" />
+  <link rel="stylesheet" href="/src/home-market.css" />
+  <title>Astelume · 从这里，连接你的下一次灵感。</title>
+</head>
+<body>
+<div id="home" class="home-page">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="0" height="0">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.5 15A8.6 8.6 0 0 1 9 3.5 8.7 8.7 0 1 0 20.5 15Z"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 6C9 4 6 4 3 5v13c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1Zm0 0v13"/></symbol>
+    <symbol id="icon-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="m12 2 8 4v6c0 5-4.5 8-8 10-3.5-2-8-5-8-10V6l8-4Zm-3 10 2 2 4-5"/></symbol>
+    <symbol id="icon-plug" viewBox="0 0 24 24"><path d="M9 2v5m6-5v5M6 7h12v4a6 6 0 0 1-12 0V7Zm6 10v5"/></symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-2-15-4 18"/></symbol>
+    <symbol id="icon-receipt" viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-4 2-4-2-3 2V3Zm3 5h8m-8 4h8m-8 4h4"/></symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="icon-pulse" viewBox="0 0 24 24"><path d="M2 12h5l3-7 4 14 3-7h5"/></symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 48 48"><path d="M24 2c2.9 13.5 8.4 19.1 22 22-13.6 2.9-19.1 8.5-22 22C21.1 32.5 15.6 26.9 2 24 15.6 21.1 21.1 15.5 24 2Z"/></symbol>
+  </svg>
+  <a class="skip-link" href="#main">跳转到主要内容</a>
+  <header class="masthead" aria-label="Astelume 页首">
+    <div class="masthead-inner">
+      <a class="home-brand" href="/" aria-label="Astelume 首页"><svg class="brand-star" aria-hidden="true"><use href="#icon-star" /></svg><span>Astelume<span aria-hidden="true">.</span></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="/" aria-current="page">首页</a><a href="#quickstart">快速接入</a><a href="#models">模型品牌</a><a href="/docs/">使用文档</a><a href="#status">服务状态</a>
+      </nav>
+      <div class="masthead-actions">
+        <details class="theme-control" id="theme-control">
+          <summary class="header-icon" id="theme-toggle" aria-label="选择显示主题"><svg class="glyph"><use href="#icon-sun" /></svg></summary>
+          <div class="theme-options" aria-label="显示主题">
+            <button type="button" data-theme-choice="light" aria-pressed="false">浅色<svg class="glyph" aria-hidden="true"><use href="#icon-check" /></svg></button>
+            <button type="button" data-theme-choice="dark" aria-pressed="false">深色<svg class="glyph" aria-hidden="true"><use href="#icon-check" /></svg></button>
+            <button type="button" data-theme-choice="system" aria-pressed="true">跟随系统<svg class="glyph" aria-hidden="true"><use href="#icon-check" /></svg></button>
+          </div>
+        </details>
+        <a class="home-button home-button-primary nav-console" href="https://astelume.cc.cd/dashboard/overview">控制台<svg class="glyph" aria-hidden="true"><use href="#icon-external" /></svg></a>
+        <details class="mobile-control" id="mobile-control">
+          <summary class="header-icon" id="menu-toggle" aria-controls="mobile-nav" aria-label="导航菜单"><svg class="glyph menu-open-icon" aria-hidden="true"><use href="#icon-menu" /></svg><svg class="glyph menu-close-icon" aria-hidden="true"><use href="#icon-close" /></svg></summary>
+          <nav id="mobile-nav" class="mobile-nav" aria-label="移动主导航">
+            <a href="/" aria-current="page">首页</a><a href="#quickstart">快速接入</a><a href="#models">模型品牌</a><a href="/docs/">使用文档</a><a href="#status">服务状态</a>
+            <a class="home-button home-button-primary" href="https://astelume.cc.cd/dashboard/overview">进入控制台<svg class="glyph" aria-hidden="true"><use href="#icon-external" /></svg></a>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <div class="continuum-scene" aria-hidden="true" inert><i class="scene-clouds"></i><i class="scene-stars"></i></div>
+    <section class="home-hero" aria-labelledby="hero-title" data-quote-state="unavailable">
+      <div class="atlas-stage" aria-hidden="true" inert>
+        <div id="quote-visual" class="quote-visual" aria-hidden="true" inert hidden></div>
+        <div class="atlas-shade"></div>
+      </div>
+      <div class="hero-stack">
+        <h1 id="hero-title"><span class="title-line">从这里<span class="title-punctuation">，</span></span><span class="title-line home-gradient">连接你的下一次灵感<span class="title-punctuation">。</span></span></h1>
+        <p class="hero-intro">用一个 API，在你熟悉的客户端接入 AI 模型。</p>
+        <div class="home-actions">
+          <a class="home-button home-button-primary" href="https://astelume.cc.cd/keys">获取 API Key<svg class="glyph" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+          <a class="home-button home-button-secondary" href="https://astelume.cc.cd/pricing">模型广场核价<svg class="glyph" aria-hidden="true"><use href="#icon-external" /></svg></a>
+        </div>
+        <nav class="hero-docs" aria-label="常用接入文档">
+          <a href="/docs/clients/#clients-cherry-studio-chatbox-open-webui">Cherry Studio</a>
+          <a href="/docs/clients/#clients-cc-switch-claude-code-codex-gemini-cli">CC Switch</a>
+          <a href="/docs/"><svg class="glyph" aria-hidden="true"><use href="#icon-book" /></svg>使用文档</a>
+        </nav>
+      </div>
+      <div class="quote-toolbar"><a id="hero-quote-key" href="https://astelume.cc.cd/pricing" hidden>输入价示例 · ¥ / 百万 Token <span aria-hidden="true">↗</span></a></div>
+      <p id="quote-status" class="home-visually-hidden" role="status">当前报价请以模型广场为准。</p>
+    </section>
+    <nav class="home-wrap overview-strip" aria-label="快速浏览">
+      <a href="#models"><b class="atlas-index" aria-hidden="true">01</b><span><strong>选择模型</strong><small>浏览品牌目录</small></span><svg class="glyph" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+      <a href="#quickstart"><b class="atlas-index" aria-hidden="true">02</b><span><strong>快速接入</strong><small>配置你的客户端</small></span><svg class="glyph" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+      <a href="https://astelume.cc.cd/pricing"><b class="atlas-index" aria-hidden="true">03</b><span><strong>核对价格</strong><small>前往模型广场</small></span><svg class="glyph" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+      <a href="#status"><b class="atlas-index" aria-hidden="true">04</b><span><strong>服务状态</strong><small>查看检查快照</small></span><svg class="glyph" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+    </nav>
+    <section class="developer-section" aria-labelledby="developer-title">
+      <div class="home-wrap">
+        <div class="home-section-heading">
+          <div><p class="home-kicker section-kicker">01 / 快速接入</p><h2 class="home-section-title" id="developer-title">从选择模型，到第一次调用</h2><p>四步配置，在你熟悉的客户端发出第一条请求。</p></div>
+          <a class="home-text-link" href="/docs/quickstart/">查看接入文档<svg class="glyph" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-top"><span class="feature-icon"><svg class="glyph" aria-hidden="true"><use href="#icon-layers" /></svg></span><span class="feature-index" aria-hidden="true">01</span></div><h3>选择模型</h3>
+            <p>先选模型家族，再核对型号与接入方式。</p>
+            <a class="feature-link" href="#models">浏览模型品牌<svg class="glyph" aria-hidden="true"><use href="#icon-arrow" /></svg></a>
+          </article>
+          <article class="feature-card">
+            <div class="feature-top"><span class="feature-icon"><svg class="glyph" aria-hidden="true"><use href="#icon-shield" /></svg></span><span class="feature-index" aria-hidden="true">02</span></div><h3>获取密钥</h3>
+            <p>在控制台创建 API Key，只在受控客户端或服务端使用。</p>
+            <div class="feature-tags"><a href="https://astelume.cc.cd/dashboard/overview">进入控制台</a><a href="/docs/api-keys/">管理密钥指南</a></div>
+          </article>
+          <article id="quickstart" class="feature-card">
+            <div class="feature-top"><span class="feature-icon"><svg class="glyph" aria-hidden="true"><use href="#icon-plug" /></svg></span><span class="feature-index" aria-hidden="true">03</span></div><h3>配置连接</h3>
+            <p>在兼容客户端中配置地址和密钥，然后选择账户有权调用的模型。</p>
+            <div class="feature-connect">
+              <div><span class="address-label">API Base URL</span><code id="api-base-url">https://astelume.cc.cd/v1</code></div>
+              <button class="copy-control" id="copy-api-address" type="button"><svg class="glyph" aria-hidden="true"><use href="#icon-copy" /></svg><span class="copy-label">复制 API 地址</span></button>
+              <span id="copy-api-status" class="copy-feedback" role="status"></span>
+            </div>
+          </article>
+          <article class="feature-card">
+            <div class="feature-top"><span class="feature-icon"><svg class="glyph" aria-hidden="true"><use href="#icon-code" /></svg></span><span class="feature-index" aria-hidden="true">04</span></div><h3>开始调用</h3>
+            <p>使用所选模型支持的接口发起请求，然后在控制台核对用量与费用。</p>
+            <div class="feature-tags"><a href="/docs/protocols/">接口指南</a><a href="/docs/first-request/">查看请求示例</a></div>
+          </article>
+        </div>
+        <div class="mini-grid">
+          <article class="mini-card"><svg class="glyph" aria-hidden="true"><use href="#icon-grid" /></svg><h3><a href="https://astelume.cc.cd/dashboard/overview">统一控制台</a></h3><p>查看账户、用量和请求记录。</p></article>
+          <article class="mini-card"><svg class="glyph" aria-hidden="true"><use href="#icon-receipt" /></svg><h3><a href="https://astelume.cc.cd/pricing">价格与用量</a></h3><p>调用前核对分组价，调用后在控制台查看用量。</p></article>
+          <article id="status" class="mini-card"><span id="newapi-status" class="status-dot unknown" aria-hidden="true"></span><h3>服务状态</h3><p id="overall-status" role="status">尚未核验</p><p id="status-updated">暂无可用检查时间，请查看控制台。</p></article>
+          <article class="mini-card"><svg class="glyph" aria-hidden="true"><use href="#icon-book" /></svg><h3><a href="/docs/quickstart/">查看接入文档</a></h3><p><a href="/docs/first-request/">查看请求示例</a>和客户端配置。</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="models" class="catalog-section" aria-labelledby="models-title">
+      <div class="home-wrap">
+        <div class="home-section-heading">
+          <div><p class="home-kicker section-kicker">02 / 模型品牌</p><h2 class="home-section-title" id="models-title">选择你的模型家族</h2><p>先了解模型的用途，再到模型广场选择接入方式。</p></div>
+          <a class="home-text-link" href="https://astelume.cc.cd/pricing">浏览模型广场<svg class="glyph" aria-hidden="true"><use href="#icon-external" /></svg></a>
+        </div>
+        <ul id="brand-grid" class="brand-grid" aria-label="模型原厂品牌矩阵" aria-busy="true"></ul>
+        <p id="brand-status" class="brand-status" role="status">模型品牌目录尚未载入。</p>
+        <p class="model-disclaimer">标识归各品牌所有，仅用于识别模型家族。可用型号与价格以模型广场为准。</p>
+      </div>
+    </section>
+
+    <div class="atlas-tail home-wrap"><span class="home-kicker">最后一步 / FIRST REQUEST</span><a href="/docs/first-request/">去写你的第一条请求 <svg class="glyph" aria-hidden="true"><use href="#icon-arrow" /></svg></a></div>
+  </main>
+  <footer class="home-footer">
+    <div class="home-wrap">
+      <div class="home-footer-top">
+        <div><a class="home-brand" href="/" aria-label="Astelume 首页"><svg class="brand-star" aria-hidden="true"><use href="#icon-star" /></svg><span>Astelume<span aria-hidden="true">.</span></span></a><p>统一模型 API 接入</p></div>
+        <nav aria-label="页脚导航"><a href="#models">模型品牌</a><a href="/docs/">使用文档</a><a href="https://astelume.cc.cd/pricing">模型广场</a><a href="#status">服务状态</a><button type="button" data-document="terms">服务条款</button><button type="button" data-document="privacy">隐私说明</button></nav>
+      </div>
+      <div class="home-footer-bottom"><p>© <span id="copyright-year">2026</span> Astelume</p></div>
+    </div>
+  </footer>
+  <dialog id="document-dialog" aria-labelledby="document-title"><div class="home-dialog-head"><h2 id="document-title"></h2><form method="dialog"><button id="close-dialog" class="header-icon" type="submit" aria-label="关闭对话框" autofocus><svg class="glyph" aria-hidden="true"><use href="#icon-close" /></svg></button></form></div><div id="document-body"></div></dialog>
+  <noscript><p class="home-noscript">启用 JavaScript 可载入品牌矩阵、复制地址和查看状态；控制台与使用文档链接仍可使用。</p></noscript>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

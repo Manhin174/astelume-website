@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": null,
+  "source": "No current runtime verification has been published to this static frontend.",
+  "services": { "newapi": "UNKNOWN", "sub2api": "UNKNOWN", "models": "NOT_TESTED" },
+  "notice": "配置核验进行中"
+}
