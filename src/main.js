@@ -1,4 +1,4 @@
-import { validateBrands, renderBrands } from './brands.js';
+import { mountDirectory } from './home-directory.js';
 import { mountQuoteWall } from './home-quote-view.js';
 import { homeMarketSource } from './home-market-source.js';
 import { mountServiceStatus } from './home-status.js';
@@ -118,32 +118,6 @@ function element(tag, text) {
   return node;
 }
 
-let currentMarketRows=[];
-let updateBrandExamples;
-function acceptMarketRows(rows){
-  currentMarketRows=rows;
-  updateBrandExamples?.(rows);
-  const n=new Set(rows.filter(r=>r.subject==='输入'&&r.unit==='Token'&&r.currency==='CNY'&&r.denominator===1000000).map(r=>r.model)).size;
-  setText('#fact-models',n ? String(n) : '—');
-}
-async function loadBrands() {
-  const grid = $('#brand-grid');
-  try {
-    const response = await fetch(`${import.meta.env.BASE_URL}astelume/catalog.json`, { cache: 'no-cache' });
-    if (!response.ok) throw new Error('Brand catalogue unavailable');
-    const data = validateBrands(await response.json());
-    updateBrandExamples=renderBrands(grid,data.brands);
-    setText('#fact-brands',String(data.brands.length));
-    updateBrandExamples(currentMarketRows);
-    setText('#brand-status', data.brands.length ? '' : '暂没有已上架的品牌可展示，请在模型广场核对。');
-  } catch {
-    grid.replaceChildren();
-    setText('#brand-status', '品牌信息暂时无法载入，请在模型广场查看当前服务。');
-  } finally {
-    grid.setAttribute('aria-busy', 'false');
-  }
-}
-
 $('#copy-api-address').addEventListener('click', async () => {
   const value = $('#api-base-url').textContent.trim();
   try {
@@ -180,8 +154,8 @@ documentDialog.addEventListener('click', event => {
 });
 
 setText('#copyright-year', String(new Date().getFullYear()));
-mountQuoteWall({source:homeMarketSource(),onRows:acceptMarketRows});
-void loadBrands();
+const directory=mountDirectory({grid:$('#brand-grid'),status:$('#brand-status'),brands:$('#fact-brands'),models:$('#fact-models')});
+mountQuoteWall({source:homeMarketSource(),onRows:rows=>directory.setExamples(rows)});
 mountServiceStatus({
   statusUrl: `${import.meta.env.BASE_URL}astelume/service-status.json`,
   label: $('#overall-status'), detail: $('#status-updated'), dot: $('#newapi-status'),
