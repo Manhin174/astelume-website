@@ -2,7 +2,7 @@ import { validateBrands, renderBrands } from './brands.js';
 import { mountQuoteWall } from './home-quote-view.js';
 import { homeMarketSource } from './home-market-source.js';
 import { mountServiceStatus } from './home-status.js';
-import { mountAtlas } from './home-atlas.js';
+import { mountProtocols } from './home-protocols.js';
 
 const $ = selector => document.querySelector(selector);
 const setText = (selector, value) => { $(selector).textContent = value; };
@@ -47,7 +47,7 @@ applyTheme();
 applyMotion();
 systemTheme.addEventListener('change', applyTheme);
 reduceMotion.addEventListener('change', applyMotion);
-mountAtlas();
+mountProtocols($('#protocols'));
 
 for (const button of themeChoices) {
   button.addEventListener('click', () => {
@@ -120,7 +120,12 @@ function element(tag, text) {
 
 let currentMarketRows=[];
 let updateBrandExamples;
-function acceptMarketRows(rows){currentMarketRows=rows;updateBrandExamples?.(rows);}
+function acceptMarketRows(rows){
+  currentMarketRows=rows;
+  updateBrandExamples?.(rows);
+  const n=new Set(rows.filter(r=>r.subject==='输入'&&r.unit==='Token'&&r.currency==='CNY'&&r.denominator===1000000).map(r=>r.model)).size;
+  setText('#fact-models',n ? String(n) : '—');
+}
 async function loadBrands() {
   const grid = $('#brand-grid');
   try {
@@ -128,6 +133,7 @@ async function loadBrands() {
     if (!response.ok) throw new Error('Brand catalogue unavailable');
     const data = validateBrands(await response.json());
     updateBrandExamples=renderBrands(grid,data.brands);
+    setText('#fact-brands',String(data.brands.length));
     updateBrandExamples(currentMarketRows);
     setText('#brand-status', data.brands.length ? '' : '暂没有已上架的品牌可展示，请在模型广场核对。');
   } catch {
