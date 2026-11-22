@@ -157,7 +157,7 @@ documentDialog.addEventListener('click', event => {
 });
 
 setText('#copyright-year', String(new Date().getFullYear()));
-const directory=mountDirectory({grid:$('#brand-grid'),status:$('#brand-status'),brands:$('#fact-brands')});
+const directory=mountDirectory({grid:$('#brand-grid'),status:$('#brand-status'),count:$('#fact-families')});
 mountQuoteWall({source:homeMarketSource(),onRows:rows=>directory.setExamples(rows)});
 mountServiceStatus({
   statusUrl: `${import.meta.env.BASE_URL}astelume/service-status.json`,
